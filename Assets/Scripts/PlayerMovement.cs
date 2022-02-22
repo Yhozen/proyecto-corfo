@@ -40,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collison)
     {
         Debug.Log(collison.gameObject.tag + " collision");
+        if (collison.gameObject.tag == "Ocean")
+        {
+
+            pointsManager.onGetCoin();
+            healthManager.onReceiveAttack(9999);
+        }
 
     }
     private void OnTriggerEnter(Collider collider)
