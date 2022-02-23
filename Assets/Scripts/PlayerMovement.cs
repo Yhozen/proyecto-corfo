@@ -42,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (verticalDelta <= -0.01)
         {
-            coordinator.setState(MainSceneCoordinator.State.Idle);
-
+            coordinator.setState(MainSceneCoordinator.State.WalkingBackwards);
+            Debug.Log("backwards");
         }
         else
         {

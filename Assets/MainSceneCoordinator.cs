@@ -10,7 +10,7 @@ public class MainSceneCoordinator : MonoBehaviour
     {
         Walking,
         Idle,
-        High
+        WalkingBackwards
     }
     // Start is called before the first frame update
     void Start()
@@ -25,16 +25,26 @@ public class MainSceneCoordinator : MonoBehaviour
     }
     public void setState(State state)
     {
+
         if (state == State.Walking)
         {
             anim.SetBool("walking", true);
+            anim.SetBool("walkingBackwards", false);
+
 
         }
         else if (state == State.Idle)
         {
             anim.SetBool("walking", false);
+            anim.SetBool("walkingBackwards", false);
+
 
         }
+        else if (state == State.WalkingBackwards)
+        {
+            anim.SetBool("walking", false);
+            anim.SetBool("walkingBackwards", true);
 
+        }
     }
 }
