@@ -6,7 +6,8 @@ public class ZombieManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject PlayerBody;
-    public float speed = 0.001f;
+    public float speed = 10f;
+    public HealthManager healthManager;
 
     private float LastShoot = 0f;
     private Animator anim;
@@ -19,6 +20,7 @@ public class ZombieManager : MonoBehaviour
     void Shoot()
     {
         anim.SetTrigger("zombieAttack");
+        healthManager.onReceiveAttack(5);
     }
 
     void walk()
@@ -47,7 +49,7 @@ public class ZombieManager : MonoBehaviour
         distance = Vector3.Distance(PlayerBody.transform.position, transform.position);
 
 
-        if (distance < 1.5f && Time.time > LastShoot + 0.8f)
+        if (distance < 1.5f && Time.time > LastShoot + 2.67f)
         {
             Shoot();
             LastShoot = Time.time;
