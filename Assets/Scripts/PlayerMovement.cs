@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public PointsManager pointsManager;
     public HealthManager healthManager;
     public MainSceneCoordinator coordinator;
+    float margin = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,19 +36,30 @@ public class PlayerMovement : MonoBehaviour
 
     void applyAnimations(float horizontalDelta, float verticalDelta)
     {
-        Debug.Log(verticalDelta);
-        if (verticalDelta >= 0.01)
+        if (verticalDelta >= margin)
         {
             coordinator.setState(MainSceneCoordinator.State.Walking);
         }
-        else if (verticalDelta <= -0.01)
+        else if (verticalDelta <= -margin)
         {
             coordinator.setState(MainSceneCoordinator.State.WalkingBackwards);
-            Debug.Log("backwards");
         }
         else
         {
-            coordinator.setState(MainSceneCoordinator.State.Idle);
+            if (horizontalDelta >= margin)
+            {
+                coordinator.setState(MainSceneCoordinator.State.StrafeRight);
+            }
+            else if (horizontalDelta <= -margin)
+            {
+                coordinator.setState(MainSceneCoordinator.State.StrafeLeft);
+
+            }
+            else
+            {
+                coordinator.setState(MainSceneCoordinator.State.Idle);
+
+            }
 
         }
     }

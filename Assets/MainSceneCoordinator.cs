@@ -10,7 +10,9 @@ public class MainSceneCoordinator : MonoBehaviour
     {
         Walking,
         Idle,
-        WalkingBackwards
+        WalkingBackwards,
+        StrafeRight,
+        StrafeLeft
     }
     // Start is called before the first frame update
     void Start()
@@ -30,21 +32,37 @@ public class MainSceneCoordinator : MonoBehaviour
         {
             anim.SetBool("walking", true);
             anim.SetBool("walkingBackwards", false);
-
-
+            anim.SetBool("strafeLeft", false);
+            anim.SetBool("strafeRight", false);
         }
         else if (state == State.Idle)
         {
             anim.SetBool("walking", false);
             anim.SetBool("walkingBackwards", false);
-
-
+            anim.SetBool("strafeLeft", false);
+            anim.SetBool("strafeRight", false);
         }
         else if (state == State.WalkingBackwards)
         {
             anim.SetBool("walking", false);
             anim.SetBool("walkingBackwards", true);
+            anim.SetBool("strafeLeft", false);
+            anim.SetBool("strafeRight", false);
+        }
+        else if (state == State.StrafeRight)
+        {
+            anim.SetBool("walking", false);
+            anim.SetBool("walkingBackwards", false);
+            anim.SetBool("strafeLeft", false);
+            anim.SetBool("strafeRight", true);
 
+        }
+        else if (state == State.StrafeLeft)
+        {
+            anim.SetBool("walking", false);
+            anim.SetBool("walkingBackwards", false);
+            anim.SetBool("strafeLeft", true);
+            anim.SetBool("strafeRight", false);
         }
     }
 }
