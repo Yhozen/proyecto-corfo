@@ -20,6 +20,23 @@ public class ZombieManager : MonoBehaviour
     {
         anim.SetTrigger("zombieAttack");
     }
+
+    void walk(float distance)
+    {
+        if (distance > 1.45f)
+        {
+            Vector3 direction = (transform.position - PlayerBody.transform.position).normalized;
+            float horizontalDelta = direction.x * speed * Time.deltaTime * 1.2f / 10f;
+            float verticalDelta = direction.z * speed * Time.deltaTime * 1.2f / 10f;
+
+            transform.Translate(horizontalDelta, 0, verticalDelta);
+            anim.SetBool("zombieWalking", true);
+        }
+        else
+        {
+            anim.SetBool("zombieWalking", false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,21 +55,9 @@ public class ZombieManager : MonoBehaviour
         else
         {
             transform.LookAt(PlayerBody.transform);
-
         }
 
-        if (distance > 1.45f)
-        {
-            Vector3 direction = (transform.position - PlayerBody.transform.position).normalized;
-            float horizontalDelta = direction.x * speed * Time.deltaTime * 1.2f / 10f;
-            float verticalDelta = direction.z * speed * Time.deltaTime * 1.2f / 10f;
+        walk(distance);
 
-            transform.Translate(horizontalDelta, 0, verticalDelta);
-            anim.SetBool("zombieWalking", true);
-        }
-        else
-        {
-            anim.SetBool("zombieWalking", false);
-        }
     }
 }
