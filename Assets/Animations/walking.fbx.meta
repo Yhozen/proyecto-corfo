@@ -5,6 +5,9 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
+    second: walkingBackwards
+  - first:
+      74: -203655887218126122
     second: mixamo.com
   externalObjects: {}
   materials:
