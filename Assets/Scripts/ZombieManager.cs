@@ -17,7 +17,7 @@ public class ZombieManager : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Shoot()
+    void Attack()
     {
         anim.SetTrigger("zombieAttack");
         healthManager.onReceiveAttack(5);
@@ -51,7 +51,7 @@ public class ZombieManager : MonoBehaviour
 
         if (distance < 1.5f && Time.time > LastShoot + 2.67f)
         {
-            Shoot();
+            Attack();
             LastShoot = Time.time;
         }
         else
