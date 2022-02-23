@@ -21,7 +21,7 @@ public class ZombieManager : MonoBehaviour
         anim.SetTrigger("zombieAttack");
     }
 
-    void walk(float distance)
+    void walk()
     {
         if (distance > 1.45f)
         {
@@ -57,7 +57,7 @@ public class ZombieManager : MonoBehaviour
             transform.LookAt(PlayerBody.transform);
         }
 
-        walk(distance);
+        walk();
 
     }
 }
