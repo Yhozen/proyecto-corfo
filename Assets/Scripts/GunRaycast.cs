@@ -18,7 +18,6 @@ public class GunRaycast : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.red);
-            Debug.Log($"hit: {hit.transform.tag}");
         }
         else
         {
