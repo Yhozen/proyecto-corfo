@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float mouseSensitivity = 100f;
     public PointsManager pointsManager;
     public HealthManager healthManager;
+    public MainSceneCoordinator coordinator;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +29,28 @@ public class PlayerMovement : MonoBehaviour
         float horizontalDelta = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float verticalDelta = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.Translate(horizontalDelta, 0, verticalDelta);
+        applyAnimations(horizontalDelta, verticalDelta);
 
     }
 
+    void applyAnimations(float horizontalDelta, float verticalDelta)
+    {
+        Debug.Log(verticalDelta);
+        if (verticalDelta >= 0.01)
+        {
+            coordinator.setState(MainSceneCoordinator.State.Walking);
+        }
+        else if (verticalDelta <= -0.01)
+        {
+            coordinator.setState(MainSceneCoordinator.State.Idle);
+
+        }
+        else
+        {
+            coordinator.setState(MainSceneCoordinator.State.Idle);
+
+        }
+    }
     void mouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
