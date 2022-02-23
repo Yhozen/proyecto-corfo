@@ -31,6 +31,19 @@ public class PlayerMovement : MonoBehaviour
         float verticalDelta = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.Translate(horizontalDelta, 0, verticalDelta);
         applyAnimations(horizontalDelta, verticalDelta);
+        isAiming();
+    }
+
+    void isAiming()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            coordinator.SetBool("aiming", true);
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            coordinator.SetBool("aiming", false);
+        }
 
     }
 

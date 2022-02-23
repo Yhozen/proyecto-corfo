@@ -12,7 +12,8 @@ public class MainSceneCoordinator : MonoBehaviour
         Idle,
         WalkingBackwards,
         StrafeRight,
-        StrafeLeft
+        StrafeLeft,
+        Aiming
     }
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,11 @@ public class MainSceneCoordinator : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void SetBool(string name, bool value)
+    {
+        anim.SetBool(name, value);
     }
     public void setState(State state)
     {
@@ -64,5 +70,6 @@ public class MainSceneCoordinator : MonoBehaviour
             anim.SetBool("strafeLeft", true);
             anim.SetBool("strafeRight", false);
         }
+
     }
 }
