@@ -7,14 +7,16 @@ public class ZombieManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject PlayerBody;
     private float LastShoot = 0f;
+    private Animator anim;
     void Start()
     {
-
+        anim = GetComponent<Animator>();
     }
 
     void Shoot()
     {
         Debug.Log("attacking");
+        anim.SetTrigger("zombieAttack");
     }
     // Update is called once per frame
     void Update()
