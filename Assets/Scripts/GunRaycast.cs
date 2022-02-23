@@ -25,5 +25,9 @@ public class GunRaycast : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.green);
 
         }
+
+        GameObject[] respawns = GameObject.FindGameObjectsWithTag("Enemy");
+        int enemyCount = respawns.GetLength(0);
+        Debug.Log($"enemy count: {enemyCount}");
     }
 }
