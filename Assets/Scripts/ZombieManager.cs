@@ -34,9 +34,7 @@ public class ZombieManager : MonoBehaviour
         if (currentHealth <= 0f)
         {
             anim.SetTrigger("zombieDied");
-            Debug.Log("Zombie died");
             alive = false;
-
         }
     }
     void walk()
