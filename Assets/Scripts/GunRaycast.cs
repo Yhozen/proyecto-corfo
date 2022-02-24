@@ -5,6 +5,8 @@ using UnityEngine;
 public class GunRaycast : MonoBehaviour
 {
     // Start is called before the first frame update
+    private float lastShoot = 0f;
+
     void Start()
     {
 
@@ -13,8 +15,10 @@ public class GunRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time > lastShoot + 0.8f)
         {
+            lastShoot = Time.time;
+
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
