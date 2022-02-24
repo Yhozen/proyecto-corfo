@@ -13,16 +13,26 @@ public class GunRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if (Input.GetMouseButtonDown(0))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.red);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.green);
+            RaycastHit hit;
 
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+            {
+                if (hit.transform.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("matado");
+                    ZombieManager zombieManager = hit.transform.gameObject.GetComponent<ZombieManager>();
+                    zombieManager.onReceiveAttack(50);
+                }
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.red);
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.green);
+
+            }
         }
+
     }
 }

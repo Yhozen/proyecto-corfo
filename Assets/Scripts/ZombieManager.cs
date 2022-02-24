@@ -12,9 +12,13 @@ public class ZombieManager : MonoBehaviour
     private float LastShoot = 0f;
     private Animator anim;
     float distance = 99999;
+    private int currentHealth;
+    public int initialHealth = 100;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        currentHealth = initialHealth;
     }
 
     void Attack()
@@ -23,6 +27,16 @@ public class ZombieManager : MonoBehaviour
         healthManager.onReceiveAttack(5);
     }
 
+    public void onReceiveAttack(int attackDamage)
+    {
+        currentHealth -= attackDamage;
+        if (currentHealth <= 0f)
+        {
+            anim.SetTrigger("zombieDied");
+            Debug.Log("Zombie died");
+
+        }
+    }
     void walk()
     {
         if (distance > 1.45f)
@@ -44,7 +58,7 @@ public class ZombieManager : MonoBehaviour
     {
         if (PlayerBody == null) return;
 
-
+        Debug.Log($"{currentHealth}");
 
         distance = Vector3.Distance(PlayerBody.transform.position, transform.position);
 

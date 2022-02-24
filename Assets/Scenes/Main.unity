@@ -747,7 +747,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerBody: {fileID: 308106876}
-  speed: 0.01
+  speed: 10
+  healthManager: {fileID: 0}
+  initialHealth: 100
 --- !u!95 &800591835
 Animator:
   serializedVersion: 3
