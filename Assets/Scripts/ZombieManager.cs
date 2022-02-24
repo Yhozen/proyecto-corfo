@@ -14,12 +14,14 @@ public class ZombieManager : MonoBehaviour
     float distance = 99999;
     private int currentHealth;
     public int initialHealth = 100;
-    private bool alive = true;
-
+    public bool alive = true;
+    private AudioSource audioSource;
     void Start()
     {
         anim = GetComponent<Animator>();
         currentHealth = initialHealth;
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void Attack()
@@ -35,6 +37,7 @@ public class ZombieManager : MonoBehaviour
         {
             anim.SetTrigger("zombieDied");
             alive = false;
+            audioSource.Play();
         }
     }
     void walk()

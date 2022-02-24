@@ -6,6 +6,7 @@ public class GunRaycast : MonoBehaviour
 {
     // Start is called before the first frame update
     private float lastShoot = 0f;
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class GunRaycast : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time > lastShoot + 0.8f)
         {
             lastShoot = Time.time;
-
+            audioManager.playShoot();
             RaycastHit hit;
 
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))

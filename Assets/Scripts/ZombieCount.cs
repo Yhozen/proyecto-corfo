@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ZombieCount : MonoBehaviour
 {
@@ -18,7 +19,22 @@ public class ZombieCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").GetLength(0);
+        enemyCount = 0;
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy.GetComponent<ZombieManager>().alive)
+            {
+                enemyCount++;
+            }
+        }
+
+        if (enemyCount == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+
+        }
         zombieCount.text = $"Zombies remaining: {enemyCount}";
 
     }

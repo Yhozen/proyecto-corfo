@@ -7,12 +7,19 @@ public class AudioManager : MonoBehaviour
 {
     public AudioClip oof;
     public AudioClip capoeira;
+    public AudioClip shoot;
 
     public AudioSource audioSource;
     // Start is called before the first frame update
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+    public void playShoot()
+    {
+        audioSource.clip = shoot;
+        audioSource.Play();
     }
     void Start()
     {
