@@ -21,16 +21,9 @@ public class GunRaycast : MonoBehaviour
             {
                 if (hit.transform.gameObject.tag == "Enemy")
                 {
-                    Debug.Log("matado");
                     ZombieManager zombieManager = hit.transform.gameObject.GetComponent<ZombieManager>();
                     zombieManager.onReceiveAttack(50);
                 }
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.red);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.green);
-
             }
         }
 

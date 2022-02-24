@@ -14,6 +14,7 @@ public class ZombieManager : MonoBehaviour
     float distance = 99999;
     private int currentHealth;
     public int initialHealth = 100;
+    private bool alive = true;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class ZombieManager : MonoBehaviour
         {
             anim.SetTrigger("zombieDied");
             Debug.Log("Zombie died");
+            alive = false;
 
         }
     }
@@ -58,7 +60,7 @@ public class ZombieManager : MonoBehaviour
     {
         if (PlayerBody == null) return;
 
-        Debug.Log($"{currentHealth}");
+        if (!alive) return;
 
         distance = Vector3.Distance(PlayerBody.transform.position, transform.position);
 
@@ -72,6 +74,8 @@ public class ZombieManager : MonoBehaviour
         {
             transform.LookAt(PlayerBody.transform);
         }
+
+
 
         walk();
 
