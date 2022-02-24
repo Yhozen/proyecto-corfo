@@ -6,62 +6,7 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch_49_body1
-    second: {fileID: 2100000, guid: 0cbc0be23faca89f68f3a5d046799be4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch_49_body2
-    second: {fileID: 2100000, guid: da68430912918a3bca2feeda6ff3bf7b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch_49_eyelashes
-    second: {fileID: 2100000, guid: 44500583026d724edbc167da087328a5, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1001_Diffuse
-    second: {fileID: 2800000, guid: 3af537ab91cb1e376a50fb0c0e0ce820, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1001_Glossiness
-    second: {fileID: 2800000, guid: 55900222c787f5c54a4d5f46ad198001, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1001_Normal
-    second: {fileID: 2800000, guid: f285042338a5b759cbae7ef5bd6253b0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1001_Specular
-    second: {fileID: 2800000, guid: 2b6848b330c646479bad6b41a852716b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1002_Diffuse
-    second: {fileID: 2800000, guid: ce499b9aca1faeefa9b9f2c502edb135, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1002_Glossiness
-    second: {fileID: 2800000, guid: b5e30663aaeceaf9e836b7fbf504c123, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1002_Normal
-    second: {fileID: 2800000, guid: 1a239b502277b8ceea81e88881fa0485, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch49_1002_Specular
-    second: {fileID: 2800000, guid: b82b0a49a55f52328b0d49bddbc91f68, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

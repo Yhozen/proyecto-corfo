@@ -1,12 +1,10 @@
 fileFormatVersion: 2
 guid: e8b8fbd985faf174cb0e810efec8c066
-labels:
-- Vegetation
-- CoconutPalmTreePack
-timeCreated: 1429713833
-licenseType: Store
 ShaderImporter:
+  externalObjects: {}
   defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
   userData: 
-  assetBundleName: coconut_palm_tree
+  assetBundleName: 
   assetBundleVariant: 

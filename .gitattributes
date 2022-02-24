@@ -1,3 +1,2 @@
 *nonPBR.fbx filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
 Assets/Character/Ch49_nonPBR.fbx filter=lfs diff=lfs merge=lfs -text
