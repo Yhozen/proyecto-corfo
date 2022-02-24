@@ -9,7 +9,7 @@ public class ZombieManager : MonoBehaviour
     public float speed = 10f;
     public HealthManager healthManager;
 
-    private float LastShoot = 0f;
+    private float lastAttack = 0f;
     private Animator anim;
     float distance = 99999;
     private int currentHealth;
@@ -63,10 +63,10 @@ public class ZombieManager : MonoBehaviour
         distance = Vector3.Distance(PlayerBody.transform.position, transform.position);
 
 
-        if (distance < 1.5f && Time.time > LastShoot + 2.67f)
+        if (distance < 1.5f && Time.time > lastAttack + 2.67f)
         {
             Attack();
-            LastShoot = Time.time;
+            lastAttack = Time.time;
         }
         else
         {
